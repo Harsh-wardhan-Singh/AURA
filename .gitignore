@@ -1,0 +1,16 @@
+# Ignore virtual environments
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Streamlit cache
+.streamlit/
+
+# System files
+.DS_Store
+
+# VS Code workspace settings
+.vscode/
