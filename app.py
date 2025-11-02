@@ -5,6 +5,7 @@ from src.burnout_model import compute_burnout
 from src.comfort_mode import pick_message
 from src.collect_data import append_daily_record
 import pandas as pd
+import os
 
 st.set_page_config(page_title="AURA - BurnoutGuard", layout="centered")
 
@@ -38,7 +39,7 @@ if st.button("Analyze my wellbeing"):
 # teacher monthly chart
 if st.button("Show saved trend (teacher view)"):
     try:
-        df = pd.read_csv("data/student_logs.csv", parse_dates=["date"])
+        df = pd.read_csv(os.path.join(os.path.dirname(__file__), "data", "student_logs.csv"), parse_dates=["date"])
         df = df.sort_values("date")
         st.line_chart(df.set_index("date")["burnout_score"])
         st.dataframe(df.tail(10))

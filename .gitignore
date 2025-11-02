@@ -14,3 +14,5 @@ __pycache__/
 
 # VS Code workspace settings
 .vscode/
+
+data/student_data.csv
