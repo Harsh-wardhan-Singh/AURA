@@ -2,7 +2,8 @@ import datetime
 import pandas as pd
 import os
 
-DATA_PATH = "data/student_logs.csv"
+ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_PATH = os.path.join(ROOT_DIR, "data", "student_logs.csv")
 
 def append_daily_record(text, screen_time, typing_wpm, burnout_score):
     row = {
